@@ -6,7 +6,7 @@ import About from "./screens/About";
 import Signup from "./screens/Signup";
 import Login from "./screens/Login";
 import Book from "./screens/Book";
-import MyBooks from "./screens/MyBooks";
+import ManageBooks from "./screens/ManageBooks";
 import AddBook from "./screens/AddBook";
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/book/:slug" element={<Book/>}/>
         <Route path="/addbook" element={<AddBook/>}/>
-        <Route path="/mybooks" element={<MyBooks/>}/>
+        <Route path="/managebooks" element={<ManageBooks/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/login" element={<Login/>}/>

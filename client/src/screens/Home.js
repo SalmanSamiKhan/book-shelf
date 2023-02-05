@@ -17,17 +17,17 @@ const Home = () => {
             <div className="books d-flex">
                 {
                     books.map(book => (
-                        <div className='book' key={book.slug}>
+                        <div className='book my-4' key={book._id}>
                             <br />
                             <Link to={`/book/${book.slug}`} className='text-decoration-none'>
-                                <img src={book.image} alt={book.slug} />
+                                <img src={book.image}  />
                             </Link>
                             <div className="book-info my-3">
                                 <Link to={`/book/${book.slug}`}>
                                     <h5>{book.name}</h5>
                                 </Link>
-                                <h6>{book.rating}</h6>
-                                <h6>${book.price}</h6>
+                                <h6>{book.author}</h6>
+                                <h6>{book.year}</h6>
                             </div>
                         </div>
                     ))

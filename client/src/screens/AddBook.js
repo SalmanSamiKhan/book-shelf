@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import {useNavigate} from 'react-router-dom'
 
 const AddBook = () => {
+    const navigate = useNavigate()
     const initialBook = {
         name: '', author: '', year: '', genre: '', desc: ''
     }
@@ -28,8 +30,8 @@ const AddBook = () => {
         });
         const json = await response.json()
         console.log(json)
-        // navigate('/')
         setBook(initialBook)
+        navigate('/')
         alert('Request for adding a book was submitted')
         
     }
