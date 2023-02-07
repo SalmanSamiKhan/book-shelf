@@ -1,13 +1,14 @@
 import express, { Router } from 'express'
 import Book from '../models/BookModel.js'
 import slugify from 'slugify'
-const addbookRouter = express.Router()
+const bookRouter = express.Router()
+
 
 // api/addbook
-addbookRouter.post('/', async (req, res) => {
+bookRouter.post('/addbook', async (req, res) => {
     try {
         const { name, author, year, genre, desc } = req.body
-        const slug = slugify(name,{lower:true})
+        const slug = slugify(name, { lower: true })
         const newBook = new Book({ name: name, author: author, year: year, genre: genre, desc: desc, slug: slug })
         newBook.save((err) => {
             if (err) {
@@ -21,4 +22,4 @@ addbookRouter.post('/', async (req, res) => {
 
 })
 
-export default addbookRouter
+export default bookRouter

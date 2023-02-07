@@ -1,11 +1,10 @@
 import express, { Router } from 'express'
-import data from '../data.js'
 import Book from '../models/BookModel.js';
 
-const getbooksRouter = express.Router()
+const booksRouter = express.Router()
 
 // api/getbooks
-getbooksRouter.get('/', async (req, res) => {
+booksRouter.get('/getbooks', async (req, res) => {
     try {
         const books = await Book.find() 
         res.send(books)
@@ -17,4 +16,4 @@ getbooksRouter.get('/', async (req, res) => {
 
 })
 
-export default getbooksRouter
+export default booksRouter

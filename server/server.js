@@ -1,8 +1,6 @@
 import express from 'express'
-import addbookRouter from './routes/addbookRoutes.js'
-import addimageRouter from './routes/addimageRoutes.js'
-import getbooksRouter from './routes/getbooksRoutes.js'
-import getbookRouter from './routes/getbookRoutes.js'
+import bookRouter from './routes/bookRoutes.js'
+import booksRouter from './routes/booksRoutes.js'
 import mongoose from 'mongoose'
 
 const app = express()
@@ -19,10 +17,8 @@ async function main() {
   console.log('connected to db')
 }
 
-app.use('/api/getbooks', getbooksRouter) // for all book
-app.use('/api/getbook', getbookRouter) // for single book
-app.use('/api/addbook', addbookRouter) // add a book
-app.use('/api/addimage', addimageRouter) // add a book
+app.use('/api', booksRouter) // for all book
+app.use('/api', bookRouter) // add a book
 
 const localPort = process.env.PORT || 5000
 app.listen(localPort, async (req, res) => {
